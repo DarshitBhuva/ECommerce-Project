@@ -18,6 +18,8 @@ exporters:
     endpoint: 127.0.0.1:4319
     tls:
       insecure: true
+  prometheus:
+    endpoint: "0.0.0.0:8889"
 
 service:
   pipelines:
@@ -37,3 +39,11 @@ service:
       exporters:
         - debug
         - otlp/jaeger
+    metrics:
+      receivers:
+        - otlp
+      processors:
+        - batch
+      exporters:
+        - debug
+        - prometheus

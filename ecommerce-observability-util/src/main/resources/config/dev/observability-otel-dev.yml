@@ -1,21 +1,22 @@
 otel:
   enabled: false
+  url: http://localhost:4318
 
 management:
   opentelemetry:
     logging:
       export:
         otlp:
-          endpoint: http://localhost:4318/v1/logs
+          endpoint: ${otel.url}/v1/logs
         schedule-delay: 1s
     tracing:
       export:
         otlp:
-          endpoint: http://localhost:4318/v1/traces
+          endpoint: ${otel.url}/v1/traces
   otlp:
     metrics:
       export:
-        url: http://localhost:4318/v1/metrics
+        url: ${otel.url}/v1/metrics
         enabled: ${otel.enabled}
   tracing:
     sampling:

@@ -1,6 +1,7 @@
 package com.project.ecommerce.logging.util.config;
 
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +31,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "otel")
 @Getter
+@Setter
 public class OtelProperties {
 
     /**
@@ -41,4 +43,5 @@ public class OtelProperties {
      * a reachable OTel collector.</p>
      */
     private boolean enabled;
+    private String url;
 }

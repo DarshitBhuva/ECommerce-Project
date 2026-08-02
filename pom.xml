@@ -12,7 +12,7 @@
         <module>ecommerce-util</module>
         <module>ecommerce-gateway</module>
         <module>ecommerce-product-service</module>
-        <module>ecommerce-logging-util</module>
+        <module>ecommerce-observability-util</module>
     </modules>
 
     <properties>
@@ -59,7 +59,7 @@
             </dependency>
             <dependency>
                 <groupId>com.project</groupId>
-                <artifactId>ecommerce-logging-util</artifactId>
+                <artifactId>ecommerce-observability-util</artifactId>
                 <version>${ecommerce-project.version}</version>
             </dependency>
         </dependencies>
